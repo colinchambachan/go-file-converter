@@ -16,28 +16,56 @@ This tool provides a convenient way to convert media files using FFmpeg function
 
 ## Installation
 
+### Option 1: Build from source
+
 ```bash
-git clone https://github.com/colinchambachan/ffmpeg-cli.git
-cd ffmpeg-cli
-go build
+# Clone the repository
+git clone https://github.com/colinchambachan/go-file-converter.git
+cd go-file-converter
+
+# For macOS/Linux
+go mod download
+go build -o converter
+chmod +x converter
+
+# For Windows
+go mod download
+go build -o converter.exe
 ```
+
+The build process will create an executable in your current directory:
+
+- On macOS/Linux: `converter`
+- On Windows: `converter.exe`
+
+### Option 2: Download pre-built binaries
+
+You can download pre-built binaries from the [Releases](https://github.com/colinchambachan/go-file-converter/releases) page.
 
 ## Usage
 
-Place your files in the `Input` folder, then run:
+1. Create an `Input` folder in the same directory as the executable
+2. Place your media files in the `Input` folder
+3. Run the converter:
+
+### macOS/Linux:
 
 ```bash
-go run . -t <desired_output_type>
+./converter -t jpg    # Convert to JPG
+./converter -t mp3    # Convert to MP3
+./converter -t mp4    # Convert to MP4
 ```
 
-Example:
+### Windows:
 
 ```bash
-go run . -t jpg
+converter.exe -t jpg  # Convert to JPG
+converter.exe -t mp3  # Convert to MP3
+converter.exe -t mp4  # Convert to MP4
 ```
 
 ### Options
 
-- `-t`: Desired output format (e.g., mp3, mp4, wav)
+- `-t`: Desired output format (e.g., mp3, mp4, wav, jpg)
 
-Note: All files must be in the `Input` folder. Converted files will be saved to the `Output` folder.
+Note: Converted files will be saved to the `Output` folder automatically.
