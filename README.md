@@ -1,4 +1,4 @@
-# ffmpeg-cli
+# go-file-converter
 
 A simple command-line tool built in Go for converting media files using ffmpeg-go, a Go binding for FFmpeg.
 
@@ -33,7 +33,7 @@ go run . -t <desired_output_type>
 Example:
 
 ```bash
-go run . -t mp3
+go run . -t jpg
 ```
 
 ### Options
